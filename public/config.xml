@@ -18,8 +18,8 @@
 <tizen:privilege name="http://developer.samsung.com/privilege/drmplay"/>   
 <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
 <tizen:setting pointing-device-support='disable' />
-<access origin="https://wwww.googleapis.com" subdomains="true"/>
-<tizen:allow-navigation>googleapis.com *.googleapis.com</tizen:allow-navigation>
+<access origin="https://inrees.com" subdomains="true"/>
+<tizen:allow-navigation>inrees.com *.inrees.com</tizen:allow-navigation>
 <tizen:content-security-policy>script-src 'self'</tizen:content-security-policy>
 <tizen:content-security-policy-report-only>script-src 'self';</tizen:content-security-policy-report-only>
 <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="enable" encryption="disable" install-location="auto" hwkey-event="enable"/>
