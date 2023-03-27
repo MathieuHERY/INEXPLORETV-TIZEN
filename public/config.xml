@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/InexploreTVTizen" version="0.2.1" viewmodes="maximized">
+    <tizen:application id="WrxhUAYrGY.InexploreTVTizen" package="WrxhUAYrGY" required_version="2.3"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <icon src="icon.png"/>
+    <tizen:metadata key="http://samsung.com/tv/metadata/prelaunch.support" value="true"/>
+    <name>Inexploré TV</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:profile name="tv-samsung"/>
+   <tizen:privilege name="http://developer.samsung.com/privilege/network.public"/>
+<tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+<tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+<tizen:privilege name="http://tizen.org/privilege/tv.display"/>
+<tizen:privilege name="http://tizen.org/privilege/fullscreen"/>
+<tizen:privilege name="http://tizen.org/privilege/internet"/>
+<tizen:privilege name="http://tizen.org/privilege/volume.set"/> 
+<tizen:privilege name="http://developer.samsung.com/privilege/drmplay"/>   
+<tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+<tizen:setting pointing-device-support='disable' />
+<access origin="https://wwww.googleapis.com" subdomains="true"/>
+<tizen:allow-navigation>googleapis.com *.googleapis.com</tizen:allow-navigation>
+<tizen:content-security-policy>script-src 'self'</tizen:content-security-policy>
+<tizen:content-security-policy-report-only>script-src 'self';</tizen:content-security-policy-report-only>
+<tizen:setting screen-orientation="landscape" context-menu="disable" background-support="enable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+</widget>
