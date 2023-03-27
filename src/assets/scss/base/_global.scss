@@ -1,0 +1,12 @@
+@import "../base/var";
+
+.main {
+  display: flex;
+}
+.full-width {
+  width: 100%;
+}
+.gradient-darkblue-purple {
+  background: linear-gradient(90deg, $dark-blue, $purple);
+ 
+}
