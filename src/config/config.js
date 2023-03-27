@@ -1,3 +1,3 @@
-const apiBase = "https://login-api-node-33dvsn7xmq-ew.a.run.app";
+const apiBase = "https://services.inrees.fr/tv-mobile/";
 
 export { apiBase };
