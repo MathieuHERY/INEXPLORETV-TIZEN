@@ -53,8 +53,8 @@ export default function HomePage(props) {
           width="100%"
           height="100%"
           controls={false}
+          loop
           playing
-          muted
           config={{
             file: {
               attributes: {

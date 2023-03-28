@@ -5,7 +5,6 @@ export const getHomescreenAssets = () => {
     try {
       const formData = dataFormat();
       const response = await postData("accueil-public.inrees", formData);
-      console.log(response);
       return response;
     } catch (error) {}
   };
