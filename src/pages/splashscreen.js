@@ -7,8 +7,6 @@ import LogoAnimation from "../assets/json/logoAnimations.json";
 
 export default function Splashscreen(props) {
   const [hasLocalStorage, setHasLocalStorage] = useState(null);
-  const user = useSelector((state) => state.userReducer.client);
-  console.log(user);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
