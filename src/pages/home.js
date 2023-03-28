@@ -5,21 +5,28 @@ import {
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import * as unloggedActions from "../store/actions/unloggedActions";
 import { HomeButton } from "../components/atoms/buttons";
 import LoadScreen from "./loadscreen";
 
 function FocusContainer(props) {
   const { ref, focusKey, focusSelf } = useFocusable();
+  const navigate = useNavigate();
 
   useEffect(() => {
     focusSelf();
   }, [focusSelf]);
 
+  const onPress = () => {
+    navigate("/login");
+  };
+
   return (
     <FocusContext.Provider value={focusKey}>
       <div className="button-container" ref={ref}>
         <HomeButton
+          onPress={onPress}
           text={props.textButton}
           focusClassName={"home-button focus"}
           blurClassName={"home-button blur"}
@@ -54,7 +61,6 @@ export default function HomePage(props) {
           height="100%"
           controls={false}
           loop={true}
-          muted
           playing
           config={{
             file: {

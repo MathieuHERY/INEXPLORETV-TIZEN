@@ -6,8 +6,10 @@
 
 /* Components */
 @import "./components/atoms/buttons";
+@import "./components/atoms/input";
 
 /* Pages */
 @import "./pages/splashscreen";
-@import "./pages/home";
+@import "./pages/homepage";
 @import "./pages/loadscreen";
+@import "./pages/login-page";

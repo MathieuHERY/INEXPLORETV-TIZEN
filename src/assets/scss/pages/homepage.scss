@@ -30,27 +30,31 @@
     }
     h1 {
       color: $white;
-      margin: 0 3em 0.5em 3em;
+      margin: 0 3% 3% 3%;
       text-align: center;
     }
     h2 {
       color: $white;
-      margin: 0 3em 2em 3em;
+      margin: 0 3% 6% 3%;
       text-align: center;
     }
     .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .blur {
         background-color: $light-blue;
-        width: 400px;
-        height: 80px;
+        width: 20%;
+        height: 5vw;
         span {
           color: $white;
         }
       }
       .focus {
         background-color: $white;
-        width: 400px;
-        height: 80px;
+        width: 20%;
+        height: 5vw;
         span {
           color: $dark-blue;
         }
