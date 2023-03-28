@@ -53,7 +53,7 @@ export default function HomePage(props) {
           width="100%"
           height="100%"
           controls={false}
-          loop
+          loop={true}
           playing
           config={{
             file: {
