@@ -5,6 +5,7 @@ import {
 } from "@noriginmedia/norigin-spatial-navigation";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import * as authActions from "../store/actions/authActions";
 import { Input } from "../components/atoms/input";
 import { HomeButton } from "../components/atoms/buttons";
 
@@ -13,6 +14,7 @@ function FocusContainer(props) {
   const [password, setPassword] = useState("");
   const { ref, focusKey, focusSelf } = useFocusable();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     focusSelf();
@@ -24,6 +26,17 @@ function FocusContainer(props) {
 
   const onChangePassword = (value) => {
     setPassword(value);
+  };
+
+  const submitLoginForm = async () => {
+    try {
+      const response = await dispatch(
+        authActions.login({ email: email, password: password })
+      );
+      
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -46,6 +59,7 @@ function FocusContainer(props) {
           onChange={onChangePassword}
         />
         <HomeButton
+          onPress={submitLoginForm}
           text="Se connecter"
           focusClassName={"home-button login-button focus"}
           blurClassName={"home-button blur login-button"}

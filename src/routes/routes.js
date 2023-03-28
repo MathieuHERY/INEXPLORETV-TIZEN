@@ -6,6 +6,7 @@ import { init } from "@noriginmedia/norigin-spatial-navigation";
 import Splashscreen from "../pages/splashscreen";
 import HomePage from "../pages/home";
 import LoginPage from "../pages/login";
+import Logged from "../pages/logged";
 
 export default function Navigation(props) {
   /* init spatial navigation */
@@ -17,6 +18,7 @@ export default function Navigation(props) {
       <Route path="*" element={<Splashscreen />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/logged" element={<Logged />} />
     </Routes>
   );
 }

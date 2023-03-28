@@ -12,7 +12,13 @@ export const postData = async (url, datas) => {
   datas.append("ip", userIp);
   datas.append("OS", "Samsung");
   datas.append("support", "TV");
+  const client = localStorage.getItem("client");
+  const user = JSON.parse(client);
 
+  if (client) {
+    datas.append("idinrees", user.id);
+    datas.append("token", user.token);
+  }
   const response = await axiosInstance.post(url, datas);
   return response;
 };
