@@ -1,9 +1,13 @@
 /* Base */
+@import "./base/reset";
 @import "./base/global";
 @import "./base/var";
+@import "./base/fonts";
 
 /* Components */
+@import "./components/atoms/buttons";
 
 /* Pages */
 @import "./pages/splashscreen";
 @import "./pages/home";
+@import "./pages/loadscreen";

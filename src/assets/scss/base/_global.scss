@@ -8,5 +8,13 @@
 }
 .gradient-darkblue-purple {
   background: linear-gradient(90deg, $dark-blue, $purple);
- 
+}
+
+h1 {
+  font-size: 4em;
+  font-family: bold;
+}
+h2 {
+  font-size: 2.5em;
+  font-family: semi-bold;
 }

@@ -1,0 +1,19 @@
+.loader-container {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .logo-container {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 3%;
+    img {
+      width: 25%;
+      content: url("../../images/svg/logo-retina.svg");
+    }
+  }
+}

@@ -11,8 +11,51 @@
     display: flex;
     width: 100%;
     height: 100%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    .logo-container {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      top: 5%;
+      left: 0;
+      width: 100%;
+      img {
+        width: 30%;
+        content: url("../../images/svg/logo-retina.svg");
+      }
+    }
+    h1 {
+      color: $white;
+      margin: 0 3em 0.5em 3em;
+      text-align: center;
+    }
+    h2 {
+      color: $white;
+      margin: 0 3em 2em 3em;
+      text-align: center;
+    }
+    .button-container {
+      .blur {
+        background-color: $light-blue;
+        width: 300px;
+        height: 60px;
+        span {
+          color: $white;
+        }
+      }
+      .focus {
+        background-color: $white;
+        width: 300px;
+        height: 60px;
+        span {
+          color: $dark-blue;
+        }
+      }
+    }
   }
 }
 .home-video-container::before {
