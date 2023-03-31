@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "../components/atoms/loader";
 
-export default function LoadScreen(props) {
+export default function LoadPage(props) {
   return (
     <div className="main full-width gradient-darkblue-purple loader-container">
       <Loader width="130" height="130" color="#ffffff" />

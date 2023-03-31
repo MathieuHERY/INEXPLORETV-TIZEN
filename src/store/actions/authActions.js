@@ -17,7 +17,6 @@ const saveDataToLocalStorage = (token, idinrees) => {
 export const tryAutoLogin = () => {
   return async (dispatch) => {
     try {
-      console.log("tryAutoLoginCalled");
       const date = new Date().getTime() / 1000;
       const timestamp = Math.round(date);
       const formData = dataFormat();

@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as unloggedActions from "../store/actions/unloggedActions";
 import { HomeButton } from "../components/atoms/buttons";
-import LoadScreen from "./loadscreen";
+import LoadScreen from "./loadPage";
 
 function FocusContainer(props) {
   const { ref, focusKey, focusSelf } = useFocusable();
@@ -36,7 +36,7 @@ function FocusContainer(props) {
   );
 }
 
-export default function HomePage(props) {
+export default function StartUpPage(props) {
   const [assets, setAssets] = useState(null);
 
   const dispatch = useDispatch();

@@ -7,9 +7,13 @@
 /* Components */
 @import "./components/atoms/buttons";
 @import "./components/atoms/input";
+@import "./components/atoms/avatar";
+@import "./components/organisms/menu";
+@import "./components/molecules/menu-items";
 
 /* Pages */
-@import "./pages/splashscreen";
-@import "./pages/homepage";
-@import "./pages/loadscreen";
+@import "./pages/launch-page";
+@import "./pages/startup-page";
+@import "./pages/load-page";
 @import "./pages/login-page";
+@import "./pages/home-page";

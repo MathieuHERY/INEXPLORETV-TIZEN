@@ -5,7 +5,7 @@ import * as authActions from "../store/actions/authActions";
 import Lottie from "lottie-react";
 import LogoAnimation from "../assets/json/logoAnimations.json";
 
-export default function Splashscreen(props) {
+export default function LaunchPage(props) {
   const [hasLocalStorage, setHasLocalStorage] = useState(null);
 
   const navigate = useNavigate();
@@ -29,15 +29,15 @@ export default function Splashscreen(props) {
       if (hasLocalStorage) {
         const response = await dispatch(authActions.tryAutoLogin());
         if (response) {
-          navigate("/logged");
-        } else {
           navigate("/home");
+        } else {
+          navigate("/login");
         }
       } else {
-        navigate("/home");
+        navigate("/startup");
       }
     } catch (err) {
-      navigate("/home");
+      navigate("/startup");
     }
   };
 
