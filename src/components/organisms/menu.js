@@ -6,7 +6,7 @@ import {
 } from "@noriginmedia/norigin-spatial-navigation";
 import * as menuActions from "../../store/actions/menuActions";
 import Avatar from "../atoms/avatar";
-import MenuItem from "../molecules/menuItems";
+import MenuItem from "../molecules/menuItem";
 
 export default function Menu(props) {
   const { ref, focusKey, hasFocusedChild } = useFocusable({

@@ -7,8 +7,7 @@ import SearchIcon from "../../assets/images/svg/search.svg";
 import CalendarIcon from "../../assets/images/svg/calendar.svg";
 
 export default function MenuItem(props) {
-  const { ref, focused } = useFocusable({ onEnterPress: () => onPress(
-  )});
+  const { ref, focused } = useFocusable();
 
   if (props.item.titre === "Rechercher") {
     return (
