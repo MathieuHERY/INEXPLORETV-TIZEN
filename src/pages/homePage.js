@@ -21,26 +21,41 @@ function HomePageContent(props) {
   }, [dispatch]);
 
   const onRowFocus = useCallback(
-    (FocusableComponentLayout, index) => {
-      window.scroll({
-        top: FocusableComponentLayout.y,
-        left: 0,
-        behaviour: "smooth",
-      });
+    (FocusableComponentLayout) => {
       ref.current.scrollTo({
-        top: FocusableComponentLayout.y,
+        top: FocusableComponentLayout.y + 100,
         behaviour: "smooth",
       });
     },
     [ref]
   );
 
+  const onFocusPush = useCallback(() => {
+    ref.current.scrollTo({
+      top: 0,
+      behaviour: "smooth",
+    });
+  }, [ref]);
+
+  const onPress = (slug) => {
+    console.log(slug);
+  };
+
   return (
     <FocusContext.Provider value={focusKey}>
       <div ref={ref} className="content-container">
         <h1>Bienvenue sur inexploré TV</h1>
-        <PushVideosRow pushVideos={props.videos.push} focusKey="PUSH" />
-        <ContentRow videosList={props.videos.liste} onRowFocus={onRowFocus} />
+        <PushVideosRow
+          pushVideos={props.videos.push}
+          onFocusPush={onFocusPush}
+          onPress={onPress}
+          focusKey="PUSH"
+        />
+        <ContentRow
+          videosList={props.videos.liste}
+          onRowFocus={onRowFocus}
+          onPress={onPress}
+        />
       </div>
     </FocusContext.Provider>
   );

@@ -1,5 +1,5 @@
 .videos-row-wrapper {
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 
   .row-scrolling-wrapper {
     overflow-x: auto;
@@ -16,17 +16,29 @@
         flex-direction: column;
         align-items: center;
         .item {
+          display: flex;
           flex-direction: column;
-          flex-direction: center;
-          align-items: center;
-          width: 300px;
-          height: 200px;
+          justify-content: center;
+          align-items: flex-start;
+
           margin-right: 15px;
-          background-color: blue;
-        }
-        .focused {
-          border: 2px white solid;
-          background-color: red;
+          span {
+            margin-bottom: 10px;
+            font-size: 0.9vw;
+            font-family: semi-bold;
+          }
+          h4 {
+            font-size: 1.1vw;
+            font-family: semi-bold;
+            color: $white;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: 1vw;
+          }
         }
       }
     }
@@ -34,4 +46,78 @@
   .row-scrolling-wrapper::-webkit-scrollbar {
     display: none;
   }
+}
+
+.item-video-haut {
+  width: 210px;
+}
+.item-home {
+  width: 316px;
+}
+
+.img-home {
+  position: relative;
+  width: 100%;
+  height: 181px;
+  margin-bottom: 0.75vw;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 45px;
+    height: 45px;
+    z-index: 2;
+  }
+}
+.img-home::after {
+  content: "";
+  background: linear-gradient(0deg, rgba(6, 22, 54, 0.67) 5%, rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.img-video-haut {
+  position: relative;
+  width: 100%;
+  height: 258px;
+  margin-bottom: 0.75vw;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 45px;
+    height: 45px;
+    z-index: 2;
+  }
+}
+.img-video-haut::after {
+  content: "";
+  background: linear-gradient(0deg, rgba(6, 22, 54, 0.67) 5%, rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.focused {
+  border: 2px $light-blue solid;
+  background-color: $light-blue-program-focused;
 }
