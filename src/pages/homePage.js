@@ -10,7 +10,6 @@ import PushVideosRow from "../components/organisms/pushVideosRow";
 import ContentRow from "../components/organisms/videosRow";
 
 function HomePageContent(props) {
-  const videos = useSelector((state) => state.categoryReducer);
   const { ref, focusKey, focusSelf } = useFocusable();
   const dispatch = useDispatch();
 
@@ -23,7 +22,6 @@ function HomePageContent(props) {
 
   const onRowFocus = useCallback(
     (FocusableComponentLayout, index) => {
-      console.log("onRowFocus");
       window.scroll({
         top: FocusableComponentLayout.y,
         left: 0,
@@ -40,18 +38,21 @@ function HomePageContent(props) {
   return (
     <FocusContext.Provider value={focusKey}>
       <div ref={ref} className="content-container">
-        <PushVideosRow pushVideos={videos.push} focusKey="PUSH" />
-        <ContentRow videosList={videos.liste} onRowFocus={onRowFocus} />
+        <h1>Bienvenue sur inexploré TV</h1>
+        <PushVideosRow pushVideos={props.videos.push} focusKey="PUSH" />
+        <ContentRow videosList={props.videos.liste} onRowFocus={onRowFocus} />
       </div>
     </FocusContext.Provider>
   );
 }
 
 export default function HomePage(props) {
+  const videos = useSelector((state) => state.categoryReducer);
+
   return (
     <div className="full-width gradient-darkblue-purple homepage-container">
       <Menu />
-      <HomePageContent focusKey="PUSH" />
+      <HomePageContent videos={videos} focusKey="PUSH" />
     </div>
   );
 }

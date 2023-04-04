@@ -1,11 +1,11 @@
 .pushvideo-row-wrapper {
-  margin-bottom: 37px;
+  margin-bottom: 50px;
   .row-scrolling-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
     flex-shrink: 1;
     flex-grow: 1;
-    padding-left: 30px;
+    padding: 0 30px;
     .row-content {
       display: flex;
       flex-direction: row;
@@ -15,17 +15,102 @@
         flex-direction: column;
         align-items: center;
         .item {
+          display: flex;
           flex-direction: column;
-          flex-direction: center;
-          align-items: center;
           width: 800px;
-          height: 400px;
-          margin-left: 10px;
-          background-color: blue;
+          height: 350px;
+          margin-right: 15px;
+          border: 1px white solid;
+          padding: 2px;
+          .item-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              -webkit-filter: blur(3px);
+              -moz-filter: blur(3px);
+              -o-filter: blur(3px);
+              -ms-filter: blur(3px);
+              filter: blur(3px);
+            }
+          }
+          .item-container::after {
+            content: "";
+            background: linear-gradient(
+              0deg,
+              rgba(0, 0, 0, 0.8) 10%,
+              rgba(0, 0, 0, 0)
+            );
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+          }
+          .program-info-container {
+            position: absolute;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            padding: 0 20px;
+            img {
+              width: calc(100% / 4);
+              max-height: 75%;
+              object-fit: cover;
+              object-position: center;
+              filter: none;
+            }
+            .infos-wrapper {
+              width: 60%;
+              h4 {
+                font-size: 2vw;
+                font-family: bold;
+                color: $white;
+                width: 100%;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin-bottom: 1vw;
+              }
+              p {
+                font-size: 1.15vw;
+                font-family: semi-bold;
+                color: $white;
+                width: 100%;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                overflow: hidden;
+              }
+              .univers-tags {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 1vw;
+                span {
+                  font-size: 1vw;
+                  font-family: semi-bold;
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
         }
         .focused {
-          border: 2px white solid;
-          background-color: red;
+          border: 3px $light-blue solid;
         }
       }
     }

@@ -22,10 +22,13 @@ function VideosRow(props) {
     },
     [videoRowRef]
   );
+  
 
   return (
     <FocusContext.Provider value={focusKey}>
       <div className="videos-row-wrapper" ref={ref}>
+        <h3>{props.list.titre}</h3>
+        <div className="divider"/>
         <div className="row-scrolling-wrapper" ref={videoRowRef}>
           <div className="row-content">
             {props.list.items.map((item, i) => (

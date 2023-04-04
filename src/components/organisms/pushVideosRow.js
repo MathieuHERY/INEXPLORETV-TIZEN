@@ -29,7 +29,7 @@ export default function PushVideosRow(props) {
         <div className="row-scrolling-wrapper" ref={pushVideoRef}>
           <div className="row-content">
             {props.pushVideos.map((item, i) => (
-              <PushVideoItem onFocus={onFocus} i={i} />
+              <PushVideoItem onFocus={onFocus} item={item} i={i} />
             ))}
           </div>
         </div>

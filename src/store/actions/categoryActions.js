@@ -13,7 +13,6 @@ export const getHomeContent = () => {
           data: response.data,
         },
       });
-      /*  return response.data.pushvideotv[0]; */
     } catch (error) {
       console.log(error);
     }
