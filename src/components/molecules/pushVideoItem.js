@@ -9,11 +9,11 @@ export default function PushVideoItem(props) {
   const { ref, focused } = useFocusable({
     onFocus: (FocusableComponentLayout) =>
       props.onFocus(FocusableComponentLayout, props.i),
-    onEnterPress:() => props.onPress(props.item.slug)
+    onEnterPress: () => props.onPress(props.item.slug),
   });
 
   return (
-    <div className="item-wrapper">
+    <div key={props.i} className="item-wrapper">
       <div ref={ref} className={focused ? "item focused" : "item"}>
         <div className="item-container">
           <img

@@ -1,6 +1,7 @@
 import { dataFormat, postData } from "../../mixins/formData";
 
 export const SET_MENU_ITEMS = "SET_MENU_ITEMS";
+export const SET_MENU_SELECTED = "SET_MENU_SELECTED";
 export const RESET_MENU_INITIAL = "RESET_MENU_INITIAL";
 
 export const getMenuItems = () => {
@@ -13,6 +14,15 @@ export const getMenuItems = () => {
         payload: response.data.menu,
       });
     } catch (error) {}
+  };
+};
+
+export const setMenuIndexSelected = (index) => {
+  return (dispatch) => {
+    dispatch({
+      type: SET_MENU_SELECTED,
+      payload: index,
+    });
   };
 };
 

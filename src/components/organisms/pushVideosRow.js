@@ -6,12 +6,8 @@ import {
 import PushVideoItem from "../molecules/pushVideoItem";
 
 export default function PushVideosRow(props) {
-  const { ref, focusKey, focusSelf } = useFocusable({});
+  const { ref, focusKey } = useFocusable({});
   const pushVideoRef = useRef(null);
-
-  useEffect(() => {
-    focusSelf();
-  }, [focusSelf]);
 
   const onFocus = useCallback(
     (FocusableComponentLayout, index) => {

@@ -3,13 +3,19 @@ import {
   useFocusable,
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as focusActions from "../../store/actions/focusActions";
+import * as menuActions from "../../store/actions/menuActions";
 import SearchIcon from "../../assets/images/svg/search.svg";
 import CalendarIcon from "../../assets/images/svg/calendar.svg";
 
 export default function MenuItem(props) {
+  const menuIndexSelected = useSelector(
+    (state) => state.menuReducer.menuIndexSelected
+  );
+
   const dispatch = useDispatch();
+
   const { ref, focused } = useFocusable({
     onFocus: () => {
       dispatch(focusActions.onFocusMenu(true));
@@ -17,22 +23,26 @@ export default function MenuItem(props) {
     onBlur: () => {
       dispatch(focusActions.onFocusMenu(false));
     },
+    onEnterPress: () => {
+      dispatch(menuActions.setMenuIndexSelected(props.index));
+    },
   });
 
   if (props.item.titre === "Rechercher") {
     return (
       <div
         ref={ref}
+        key={props.index}
         className={
           props.hasFocusedChild
-            ? window.location.pathname === "/recherche"
+            ? menuIndexSelected === props.index
               ? focused
                 ? "menu-item-open menu-focused menu-selected"
                 : "menu-item-open menu-focused"
               : focused
               ? "menu-item-open menu-focused menu-selected"
               : "menu-item-open"
-            : window.location.pathname === "/recherche"
+            : menuIndexSelected === props.index
             ? "menu-item menu-selected"
             : "menu-item"
         }
@@ -46,16 +56,17 @@ export default function MenuItem(props) {
       return (
         <div
           ref={ref}
+          key={props.index}
           className={
             props.hasFocusedChild
-              ? window.location.pathname === "/nouveautes"
+              ? menuIndexSelected === props.index
                 ? focused
                   ? "menu-item-open menu-focused menu-selected"
                   : "menu-item-open menu-focused"
                 : focused
                 ? "menu-item-open menu-focused menu-selected"
                 : "menu-item-open"
-              : window.location.pathname === "/nouveautes"
+              : menuIndexSelected === props.index
               ? "menu-item menu-selected"
               : "menu-item"
           }
@@ -70,16 +81,17 @@ export default function MenuItem(props) {
           return (
             <div
               ref={ref}
+              key={props.index}
               className={
                 props.hasFocusedChild
-                  ? window.location.pathname === "/home"
+                  ? menuIndexSelected === props.index
                     ? focused
                       ? "menu-item-open menu-focused menu-selected"
                       : "menu-item-open menu-focused"
                     : focused
                     ? "menu-item-open menu-focused menu-selected"
                     : "menu-item-open"
-                  : window.location.pathname === "/home"
+                  : menuIndexSelected === props.index
                   ? "menu-item menu-selected"
                   : "menu-item"
               }
@@ -92,16 +104,17 @@ export default function MenuItem(props) {
           return (
             <div
               ref={ref}
+              key={props.index}
               className={
                 props.hasFocusedChild
-                  ? window.location.pathname === "/categorie"
+                  ? menuIndexSelected === props.index
                     ? focused
                       ? "menu-item-open menu-focused menu-selected"
                       : "menu-item-open menu-focused"
                     : focused
                     ? "menu-item-open menu-focused menu-selected"
                     : "menu-item-open"
-                  : window.location.pathname === "/categorie"
+                  : menuIndexSelected === props.index
                   ? "menu-item menu-selected"
                   : "menu-item"
               }
@@ -115,16 +128,17 @@ export default function MenuItem(props) {
         return (
           <div
             ref={ref}
+            key={props.index}
             className={
               props.hasFocusedChild
-                ? window.location.pathname === "/categorie"
+                ? menuIndexSelected === props.index
                   ? focused
                     ? "menu-item-open menu-focused menu-selected"
                     : "menu-item-open menu-focused"
                   : focused
                   ? "menu-item-open menu-focused menu-selected"
                   : "menu-item-open"
-                : window.location.pathname === "/categorie"
+                : menuIndexSelected === props.index
                 ? "menu-item menu-selected"
                 : "menu-item"
             }

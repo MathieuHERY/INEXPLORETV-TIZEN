@@ -14,6 +14,7 @@ export default function Menu(props) {
   });
   const user = useSelector((state) => state.userReducer.client);
   const menu = useSelector((state) => state.menuReducer.menu);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,13 +33,10 @@ export default function Menu(props) {
           hasFocusedChild ? "nav-container-growth" : "nav-container-shrink"
         }
       >
-        <Avatar
-          user={user}
-          hasFocusedChild={hasFocusedChild}
-        />
+        <Avatar user={user} hasFocusedChild={hasFocusedChild} />
         <menu ref={ref}>
           {menu.map((item, i) => (
-            <MenuItem item={item} hasFocusedChild={hasFocusedChild} />
+            <MenuItem item={item} index={i} hasFocusedChild={hasFocusedChild} />
           ))}
         </menu>
       </nav>

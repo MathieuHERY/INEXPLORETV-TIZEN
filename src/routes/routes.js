@@ -7,6 +7,7 @@ import LaunchPage from "../pages/launchPage";
 import StartUpPage from "../pages/startupPage";
 import LoginPage from "../pages/loginPage";
 import HomePage from "../pages/homePage";
+import VideoPage from "../pages/videoPage";
 import SearchPage from "../pages/searchPage";
 
 export default function Navigation(props) {
@@ -20,6 +21,7 @@ export default function Navigation(props) {
       <Route path="/startup" element={<StartUpPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/home" element={<HomePage />} />
+      <Route path="/video/:slug" element={<VideoPage />} />
       <Route path="/recherche" element={<SearchPage />} />
     </Routes>
   );

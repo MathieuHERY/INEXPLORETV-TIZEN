@@ -21,7 +21,7 @@
           height: 350px;
           margin-right: 15px;
           border: 1px white solid;
-          padding: 2px;
+          overflow: hidden;
           .item-container {
             position: relative;
             width: 100%;
@@ -31,11 +31,11 @@
               height: 100%;
               object-fit: cover;
               object-position: center;
-              -webkit-filter: blur(3px);
-              -moz-filter: blur(3px);
-              -o-filter: blur(3px);
-              -ms-filter: blur(3px);
-              filter: blur(3px);
+              -webkit-filter: blur(0.75em);
+              -moz-filter: blur(0.75em);
+              -o-filter: blur(0.75em);
+              -ms-filter: blur(0.75em);
+              filter: blur(0.75em);
             }
           }
           .item-container::after {

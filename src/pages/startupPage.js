@@ -43,8 +43,12 @@ export default function StartUpPage(props) {
 
   useEffect(() => {
     async function getHomescreenAssets() {
-      const response = await dispatch(unloggedActions.getHomescreenAssets());
-      setAssets(response.data);
+      try {
+        const response = await dispatch(unloggedActions.getHomescreenAssets());
+        setAssets(response.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
     getHomescreenAssets();
   }, [dispatch]);

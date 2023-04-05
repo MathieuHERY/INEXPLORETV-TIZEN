@@ -4,7 +4,9 @@ import {
   useFocusable,
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
+import { useNavigate } from "react-router-dom";
 import * as categoryActions from "../store/actions/categoryActions";
+import LoadPage from "./loadPage";
 import Menu from "../components/organisms/menu";
 import PushVideosRow from "../components/organisms/pushVideosRow";
 import ContentRow from "../components/organisms/videosRow";
@@ -13,14 +15,11 @@ import Overlay from "../components/organisms/overlay";
 function HomePageContent(props) {
   const { ref, focusKey, focusSelf } = useFocusable();
   const menuFocused = useSelector((state) => state.focusReducer.menuFocused);
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    async function getHomeContent() {
-      const response = await dispatch(categoryActions.getHomeContent());
-    }
-    getHomeContent();
-  }, [dispatch]);
+    focusSelf();
+  }, [focusSelf]);
 
   const onRowFocus = useCallback(
     (FocusableComponentLayout) => {
@@ -40,7 +39,7 @@ function HomePageContent(props) {
   }, [ref]);
 
   const onPress = (slug) => {
-    console.log(slug);
+    navigate(`/video/${slug}`);
   };
 
   return (
@@ -51,27 +50,42 @@ function HomePageContent(props) {
           pushVideos={props.videos.push}
           onFocusPush={onFocusPush}
           onPress={onPress}
-          focusKey="PUSH"
+          focusKey={"PUSH"}
         />
         <ContentRow
           videosList={props.videos.liste}
           onRowFocus={onRowFocus}
           onPress={onPress}
         />
-          {menuFocused && <Overlay />}
+        {menuFocused && <Overlay />}
       </div>
-    
     </FocusContext.Provider>
   );
 }
 
 export default function HomePage(props) {
   const videos = useSelector((state) => state.categoryReducer);
+  const dispatch = useDispatch();
 
-  return (
-    <div className="full-width gradient-darkblue-purple homepage-container">
-      <Menu />
-      <HomePageContent videos={videos} focusKey="PUSH" />
-    </div>
-  );
+  useEffect(() => {
+    async function getHomeContent() {
+      try {
+        const response = await dispatch(categoryActions.getHomeContent());
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getHomeContent();
+  }, [dispatch]);
+
+  if (videos.liste.length === 0) {
+    return <LoadPage />;
+  } else {
+    return (
+      <div className="full-width gradient-darkblue-purple homepage-container">
+        <Menu />
+        <HomePageContent videos={videos} />
+      </div>
+    );
+  }
 }
