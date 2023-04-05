@@ -12,7 +12,32 @@
   }
 }
 
-.selected {
+.menu-item-open {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 4.5vw;
+  padding: 0 3.5vw;
+  .icon {
+    width: 1.75vw;
+    height: 1.75vw;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(103deg)
+      brightness(109%) contrast(101%);
+  }
+  span {
+    margin-left: 1vw;
+    font-size: 1.25vw;
+    font-family: semi-bold;
+    color: $white;
+  }
+}
+
+.menu-focused {
+  background-color: $light-blue-transparency;
+}
+
+.menu-selected {
   border-right: 3px;
   border-color: $white;
   border-style: solid;

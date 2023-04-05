@@ -60,7 +60,6 @@ export const login = (userData) => {
       formData.append("password", userData.password);
 
       const response = await postData("client.inrees", formData);
-      console.log(response);
       if (response.data.status === "success") {
         if (response.data.client.inreestv > timestamp) {
           saveDataToLocalStorage(
@@ -71,6 +70,7 @@ export const login = (userData) => {
             type: SET_USER_CONNECTED,
             payload: response.data.client,
           });
+          return true;
         } else {
           /* dispatch(
             alertActions.displayAlert(
@@ -78,6 +78,7 @@ export const login = (userData) => {
               "Votre compte n'est plus valide"
             )
           ); */
+          return false;
         }
       } else {
         /*  dispatch(
@@ -86,8 +87,8 @@ export const login = (userData) => {
             "Votre email ou votre mot de passe n'est pas valide"
           )
         ); */
+        return false;
       }
-      return response;
     } catch (error) {
       console.log(error);
     }

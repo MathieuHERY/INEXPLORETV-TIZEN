@@ -33,7 +33,9 @@ function FocusContainer(props) {
       const response = await dispatch(
         authActions.login({ email: email, password: password })
       );
-      
+      if (response) {
+        navigate("/home");
+      }
     } catch (error) {
       console.log(error);
     }

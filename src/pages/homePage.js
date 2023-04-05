@@ -8,9 +8,11 @@ import * as categoryActions from "../store/actions/categoryActions";
 import Menu from "../components/organisms/menu";
 import PushVideosRow from "../components/organisms/pushVideosRow";
 import ContentRow from "../components/organisms/videosRow";
+import Overlay from "../components/organisms/overlay";
 
 function HomePageContent(props) {
   const { ref, focusKey, focusSelf } = useFocusable();
+  const menuFocused = useSelector((state) => state.focusReducer.menuFocused);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -56,7 +58,9 @@ function HomePageContent(props) {
           onRowFocus={onRowFocus}
           onPress={onPress}
         />
+          {menuFocused && <Overlay />}
       </div>
+    
     </FocusContext.Provider>
   );
 }

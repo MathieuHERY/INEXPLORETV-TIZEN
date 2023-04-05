@@ -27,11 +27,18 @@ export default function Menu(props) {
 
   return (
     <FocusContext.Provider value={focusKey}>
-      <nav className="nav-container-shrink">
-        <Avatar className="avatar-container-small" user={user} />
+      <nav
+        className={
+          hasFocusedChild ? "nav-container-growth" : "nav-container-shrink"
+        }
+      >
+        <Avatar
+          user={user}
+          hasFocusedChild={hasFocusedChild}
+        />
         <menu ref={ref}>
           {menu.map((item, i) => (
-            <MenuItem item={item} />
+            <MenuItem item={item} hasFocusedChild={hasFocusedChild} />
           ))}
         </menu>
       </nav>

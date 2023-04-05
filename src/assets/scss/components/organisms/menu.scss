@@ -25,3 +25,18 @@ nav {
     flex-direction: column;
   }
 }
+
+.nav-container-growth {
+  position: relative;
+  max-width: 20%;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw 0;
+  menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}

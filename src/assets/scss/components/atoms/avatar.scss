@@ -1,4 +1,4 @@
-.avatar-container-small {
+.avatar-container {
   position: absolute;
   width: 100%;
   top: 3%;
@@ -7,19 +7,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  .avatar-wrapper {
-    width: 3.5vw;
-    height: 3.5vw;
-    border-radius: 50%;
-    background-color: $light-blue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    span {
-      font-size: 1.5vw;
-      font-family: semi-bold;
-      color: $white;
-    }
+}
+
+.avatar-wrapper-small {
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 50%;
+  background-color: $light-blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 1.5vw;
+    font-family: semi-bold;
+    color: $white;
+  }
+}
+
+.avatar-wrapper-big {
+  width: 7vw;
+  height: 7vw;
+  border-radius: 50%;
+  background-color: $light-blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 3vw;
+    font-family: semi-bold;
+    color: $white;
   }
 }
