@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import CatalogueLogoBaseline from "../../assets/images/svg/catalogue-baseline-logo.svg";
 import { VideoPlayButton, VideoMoreInformationsButton } from "../atoms/buttons";
+import { ReactComponent as CatalogueLogoBaseline } from "../../assets/images/svg/catalogue-baseline-logo.svg";
 
 export default function ProgramInformations(props) {
   const navigate = useNavigate();
@@ -25,11 +25,7 @@ export default function ProgramInformations(props) {
         <div className="container">
           <div className="program-infos">
             {props.program.video.catalogue !== "" && (
-              <img
-                className="catalogue"
-                src={CatalogueLogoBaseline}
-                alt={"image"}
-              />
+              <CatalogueLogoBaseline className="catalogue" />
             )}
             <h1>{props.program.video.titre}</h1>
             {props.program.video.theme !== undefined && (
