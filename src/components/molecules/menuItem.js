@@ -47,7 +47,7 @@ export default function MenuItem(props) {
             : "menu-item"
         }
       >
-        <SearchIcon className="icon" />
+        <img className="icon" src={SearchIcon} />
         {props.hasFocusedChild && <span>Rechercher</span>}
       </div>
     );
@@ -71,7 +71,7 @@ export default function MenuItem(props) {
               : "menu-item"
           }
         >
-          <CalendarIcon className="icon" />
+          <img className="icon" src={CalendarIcon} />
           {props.hasFocusedChild && <span>Nouveautés</span>}
         </div>
       );
