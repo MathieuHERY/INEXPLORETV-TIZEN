@@ -6,8 +6,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import * as focusActions from "../../store/actions/focusActions";
 import * as menuActions from "../../store/actions/menuActions";
-import SearchIcon from "../../assets/images/svg/search.svg";
-import CalendarIcon from "../../assets/images/svg/calendar.svg";
+import { ReactComponent as SearchIcon } from "../../assets/images/svg/search.svg";
+import { ReactComponent as CalendarIcon } from "../../assets/images/svg/calendar.svg";
 
 export default function MenuItem(props) {
   const menuIndexSelected = useSelector(
@@ -47,7 +47,7 @@ export default function MenuItem(props) {
             : "menu-item"
         }
       >
-        <img className="icon" src={SearchIcon} />
+        <SearchIcon className="icon" />
         {props.hasFocusedChild && <span>Rechercher</span>}
       </div>
     );
@@ -71,7 +71,7 @@ export default function MenuItem(props) {
               : "menu-item"
           }
         >
-          <img className="icon" src={CalendarIcon} />
+          <CalendarIcon className="icon" />
           {props.hasFocusedChild && <span>Nouveautés</span>}
         </div>
       );
