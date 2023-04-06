@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>F707048E-AB66-4C15-85F6-7B980D95002C@1,5x</title>
+    <title>Regarder</title>
     <g id="Inrees.tv" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="05_dernières-sorties" transform="translate(-510.000000, -543.000000)" fill="#FFFFFF">
             <g id="Group-2" transform="translate(497.000000, 380.000000)">
                 <g id="Group" transform="translate(13.000000, 163.000000)">
-                    <circle id="Oval" fill="rgba(255, 255, 255, 0.47)" cx="23.5" cy="23.5" r="23.5"></circle>
+                    <circle id="Oval" fill="currentColor" cx="23.5" cy="23.5" r="23.5"></circle>
                     <path d="M26.7054879,18.3624183 L34.4017561,29.1013972 C34.705262,29.5248939 34.6079903,30.114246 34.1844936,30.417752 C34.0242607,30.5325856 33.8320803,30.5943396 33.6349475,30.5943396 L18.242411,30.5943396 C17.7213877,30.5943396 17.2990148,30.1719667 17.2990148,29.6509434 C17.2990148,29.4538106 17.3607688,29.2616301 17.4756024,29.1013972 L25.1718706,18.3624183 C25.4753766,17.9389216 26.0647287,17.8416499 26.4882254,18.1451559 C26.5720323,18.2052175 26.6454263,18.2786115 26.7054879,18.3624183 Z" id="Triangle" transform="translate(25.938679, 23.943396) rotate(90.000000) translate(-25.938679, -23.943396) "></path>
                 </g>
             </g>

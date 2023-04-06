@@ -1,7 +1,10 @@
-.program-informations-container {
+.cover {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   overflow: hidden;
   .wrapper {
     position: relative;
@@ -11,7 +14,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-
       -webkit-filter: blur(2.5em);
       -moz-filter: blur(2.5em);
       -o-filter: blur(2.5em);
@@ -28,5 +30,129 @@
     right: 0;
     bottom: 0;
     z-index: 1;
+  }
+  .container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    .program-infos {
+      display: flex;
+      width: 60%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      .catalogue {
+        width: 45%;
+        height: 10%;
+        object-fit: contain;
+        filter: none;
+      }
+      h1 {
+        font-size: 2.5vw;
+        color: $white;
+        max-width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin: 1.5vw 0;
+      }
+      .univers-tags {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 1.5vw;
+        span {
+          font-size: 1vw;
+          font-family: semi-bold;
+          margin-right: 10px;
+        }
+      }
+      p {
+        font-size: 1.15vw;
+        font-family: semi-bold;
+        color: $white;
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .buttons-container {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 2em 0;
+        .blur {
+          background-color: $light-blue;
+          height: 3.25vw;
+          span {
+            color: $white;
+            font-size: 1.1vw;
+            font-family: bold;
+          }
+        }
+        .focus {
+          background-color: $white;
+          height: 3.25vw;
+          span {
+            color: $dark-blue;
+            font-size: 1.1vw;
+            font-family: bold;
+          }
+        }
+        .play {
+          margin-right: 1em;
+          min-width: 20%;
+        }
+        .more-informations {
+          min-width: 30%;
+        }
+      }
+      .movie-actors-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 0.5em;
+        h3 {
+          color: $grey;
+          font-size: 1vw;
+          font-family: semi-bold;
+        }
+        span {
+          margin-left: 5px;
+          color: $grey;
+          font-size: 1vw;
+          font-family: semi-bold;
+        }
+      }
+    }
+    .program-image-wrapper {
+      width: 35%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: calc(55%);
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        filter: none;
+      }
+    }
   }
 }

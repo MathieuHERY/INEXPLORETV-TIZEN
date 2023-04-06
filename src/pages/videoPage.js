@@ -15,6 +15,10 @@ function VideoPageContent(props) {
   const { ref, focusKey, focusSelf } = useFocusable();
   const menuFocused = useSelector((state) => state.focusReducer.menuFocused);
 
+  useEffect(() => {
+    focusSelf();
+  }, [focusSelf]);
+
   return (
     <FocusContext.Provider value={focusKey}>
       <div ref={ref} className="content-container">

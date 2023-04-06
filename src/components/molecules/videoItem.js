@@ -4,15 +4,12 @@ import {
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
 import { decodeHtmlWithoutDOM } from "../../mixins/decodeHtml";
-import PlayRoundIcon from "../../assets/images/svg/play-rounded.svg";
+import { ReactComponent as PlayRoundIcon } from "../../assets/images/svg/play-rounded.svg";
 
 export default function VideoItem(props) {
   const { ref, focused } = useFocusable({
     onFocus: (FocusableComponentLayout) =>
-      props.onFocus(
-        FocusableComponentLayout,
-        props.i,
-      ),
+      props.onFocus(FocusableComponentLayout, props.i),
     onEnterPress: () => props.onPress(props.item.slug),
   });
 
@@ -43,7 +40,12 @@ export default function VideoItem(props) {
             }
             alt={props.item.titre}
           />
-          <img src={PlayRoundIcon} className="icon" alt="Regarder" />
+          <PlayRoundIcon
+            className="icon"
+            style={{
+              color: "rgba(255, 255, 255, 0.47)",
+            }}
+          />
         </div>
         {props.item.theme !== undefined && (
           <span

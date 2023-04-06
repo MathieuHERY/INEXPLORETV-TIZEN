@@ -12,3 +12,23 @@
     color: $white;
   }
 }
+
+.video-page-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease 0s;
+  .icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+  span {
+    font-size: 2vw;
+    font-family: semi-bold;
+    color: $white;
+  }
+}
