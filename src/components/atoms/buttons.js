@@ -5,12 +5,8 @@ import { ReactComponent as Glasses } from "../../assets/images/svg/glasses.svg";
 
 function HomeButton(props) {
   const { ref, focused } = useFocusable({
-    onEnterPress: () => onPress(),
+    onEnterPress: () => props.onPress(),
   });
-
-  const onPress = () => {
-    props.onPress();
-  };
 
   return (
     <div
@@ -24,12 +20,9 @@ function HomeButton(props) {
 
 function VideoPlayButton(props) {
   const { ref, focused } = useFocusable({
-    onEnterPress: () => onPress(),
+    onEnterPress: () => props.onPress(),
+    onFocus: () => props.onFocus(),
   });
-
-  const onPress = () => {
-    props.onPress();
-  };
 
   return (
     <div
@@ -48,6 +41,7 @@ function VideoPlayButton(props) {
 function VideoMoreInformationsButton(props) {
   const { ref, focused } = useFocusable({
     onEnterPress: () => onPress(),
+    onFocus: () => props.onFocus(),
   });
 
   const onPress = () => {

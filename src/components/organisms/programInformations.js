@@ -5,10 +5,14 @@ import { ReactComponent as CatalogueLogoBaseline } from "../../assets/images/svg
 
 export default function ProgramInformations(props) {
   const navigate = useNavigate();
-  console.log(props.program);
+
 
   const onPress = () => {
     navigate(-1);
+  };
+
+  const onFocus = () => {
+    props.onFocus();
   };
 
   return (
@@ -47,12 +51,14 @@ export default function ProgramInformations(props) {
                 focusClassName={"video-page-buttons play focus"}
                 blurClassName={"video-page-buttons play blur"}
                 onPress={onPress}
+                onFocus={onFocus}
               />
               <VideoMoreInformationsButton
                 text="Plus d'informations"
                 focusClassName={"video-page-buttons more-informations focus"}
                 blurClassName={"video-page-buttons more-informations blur"}
                 onPress={onPress}
+                onFocus={onFocus}
               />
             </div>
             {props.program.acteurs.realisateurs !== undefined && (

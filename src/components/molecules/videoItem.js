@@ -3,7 +3,7 @@ import {
   useFocusable,
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
-import { decodeHtmlWithoutDOM } from "../../mixins/decodeHtml";
+import { decodeHtmlWithoutDOM } from "../../helpers/decodeHtml";
 import { ReactComponent as PlayRoundIcon } from "../../assets/images/svg/play-rounded.svg";
 
 export default function VideoItem(props) {

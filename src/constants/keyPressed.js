@@ -1,0 +1,3 @@
+const BACK_KEY_PRESSED = 10009;
+
+export { BACK_KEY_PRESSED };

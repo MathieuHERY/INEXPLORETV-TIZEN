@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
+  margin-bottom: 2em;
   overflow: hidden;
   .wrapper {
     position: relative;
@@ -57,7 +58,7 @@
         filter: none;
       }
       h1 {
-        font-size: 2.5vw;
+        font-size: 3vw;
         color: $white;
         max-width: 100%;
         display: -webkit-box;
@@ -131,6 +132,8 @@
           color: $grey;
           font-size: 1vw;
           font-family: semi-bold;
+          margin: 0;
+          text-transform: none;
         }
         span {
           margin-left: 5px;

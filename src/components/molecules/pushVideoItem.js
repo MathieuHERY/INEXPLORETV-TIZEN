@@ -3,7 +3,7 @@ import {
   useFocusable,
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
-import { decodeHtmlWithoutDOM } from "../../mixins/decodeHtml";
+import { decodeHtmlWithoutDOM } from "../../helpers/decodeHtml";
 
 export default function PushVideoItem(props) {
   const { ref, focused } = useFocusable({
