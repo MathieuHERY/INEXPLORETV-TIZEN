@@ -12,7 +12,7 @@ import ProgramInformations from "../components/organisms/programInformations";
 import LoadPage from "./loadPage";
 import Overlay from "../components/organisms/overlay";
 import ContentRow from "../components/organisms/videosRow";
-import { BACK_KEY_PRESSED } from "../constants/keyPressed";
+import { BACK_KEY } from "../constants/keys";
 
 function VideoPageContent(props) {
   const { ref, focusKey, focusSelf } = useFocusable();
@@ -47,10 +47,7 @@ function VideoPageContent(props) {
   return (
     <FocusContext.Provider value={focusKey}>
       <div ref={ref} className="content-container">
-        <ProgramInformations
-          program={props.program.content}
-          onFocus={scrollTop}
-        />
+        <ProgramInformations program={props.program} onFocus={scrollTop} />
         <ContentRow
           videosList={props.program.content.liste}
           onRowFocus={onRowFocus}
@@ -64,6 +61,7 @@ function VideoPageContent(props) {
 
 export default function VideoPage(props) {
   const program = useSelector((state) => state.videoReducer);
+  const videoPlayer = useSelector((state) => state.videoPlayerReducer);
   const params = useParams();
   const dispatch = useDispatch();
   const backHandler = UseBack();
@@ -85,9 +83,11 @@ export default function VideoPage(props) {
 
   useEffect(() => {
     function goBack() {
-      if (backHandler === BACK_KEY_PRESSED) {
-        navigate("/home");
-      }
+      BACK_KEY.map((key, i) => {
+        if (backHandler === key) {
+          navigate("/home");
+        }
+      });
     }
     goBack();
   }, [backHandler]);

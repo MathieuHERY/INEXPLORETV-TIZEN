@@ -17,8 +17,8 @@
         .item {
           display: flex;
           flex-direction: column;
-          width: 800px;
-          height: 350px;
+          width: 50vw;
+          max-height: 25vw;
           margin-right: 15px;
           border: 1px white solid;
           overflow: hidden;

@@ -6,6 +6,7 @@ import menuReducer from "./reducers/menu";
 import categoryReducer from "./reducers/category";
 import videoReducer from "./reducers/video";
 import focusReducer from "./reducers/focus";
+import videoPlayerReducer from "./reducers/videoPlayer";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     categoryReducer: categoryReducer,
     videoReducer: videoReducer,
     focusReducer: focusReducer,
+    videoPlayerReducer:videoPlayerReducer
   },
 });
 
