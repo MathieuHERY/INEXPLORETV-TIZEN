@@ -4,24 +4,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as videoPlayerActions from "../store/actions/videoPlayerActions";
 import UseBack from "../helpers/backHandler";
+import Loader from "../components/atoms/loader";
 import { BACK_KEY } from "../constants/keys";
 
 export default function VideoPlayer(props) {
   const backHandler = UseBack();
-  const videoResolution = "720p";
   const videoPlayer = useSelector((state) => state.videoPlayerReducer);
+  const [videoReady, setVideoReady] = useState(false);
   const [videoStates, setVideoStates] = useState({
     play: true,
     currentTime: 0,
     duration: 0,
-    videoUrl: null,
-    vid: null,
+    videoUrl: videoPlayer.content.file.link,
+    vid: videoPlayer.content.vid,
   });
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  
 
   useEffect(() => {
     function goBack() {
@@ -33,8 +32,6 @@ export default function VideoPlayer(props) {
     }
     goBack();
   }, [backHandler]);
-
- 
 
   return (
     <div className="full-width video-player-container">
@@ -57,8 +54,13 @@ export default function VideoPlayer(props) {
             },
           },
         }}
-        onReady={() => console.log("ready")}
+        onReady={() => setVideoReady(true)}
       />
+      {!videoReady && (
+        <div className="video-not-ready">
+          <Loader width="130" height="130" color="#ffffff" />
+        </div>
+      )}
     </div>
   );
 }

@@ -32,3 +32,13 @@
     color: $white;
   }
 }
+
+.disabled {
+  background-color: $grey-disabled;
+  height: 3.25vw;
+  span {
+    color: $grey-text-disabled;
+    font-size: 1.1vw;
+    font-family: bold;
+  }
+}

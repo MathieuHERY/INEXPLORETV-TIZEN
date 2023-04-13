@@ -31,7 +31,13 @@ function VideoPlayButton(props) {
     >
       <PlayRoundIcon
         className="icon"
-        style={{ color: focused ? "#38a9e1" : "rgba(255, 255, 255, 0.47)" }}
+        style={{
+          color: props.disabled
+            ? "#7f8c8d"
+            : focused
+            ? "#38a9e1"
+            : "rgba(255, 255, 255, 0.47)",
+        }}
       />
       <span>{props.text}</span>
     </div>

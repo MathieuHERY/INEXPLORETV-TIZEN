@@ -11,12 +11,11 @@ export default function ProgramInformations(props) {
   const dispatch = useDispatch();
 
   const onPress = () => {
-    const response = selectVideoFile(props.program.episodes[0]);
-    console.log(response);
-    /*   dispatch(
-      videoPlayerActions.setPlayerVideoVisible(props.program.episodes[0])
-    );
-    navigate('/player') */
+    if (props.program.episodes.length !== 0) {
+      const video = selectVideoFile(props.program.episodes[0]);
+      dispatch(videoPlayerActions.setPlayerVideoVisible(video));
+      navigate("/player");
+    }
   };
 
   const onFocus = () => {
@@ -54,16 +53,22 @@ export default function ProgramInformations(props) {
                 .join(" ")}
             </p>
             <div className="buttons-container">
-              {props.program.episodes.length !== 0 && (
-                <VideoPlayButton
-                  text="Regarder"
-                  focusClassName={"video-page-buttons play focus"}
-                  blurClassName={"video-page-buttons play blur"}
-                  onPress={onPress}
-                  onFocus={onFocus}
-                />
-              )}
-
+              <VideoPlayButton
+                text="Regarder"
+                focusClassName={
+                  props.program.episodes.length !== 0
+                    ? "video-page-buttons play focus"
+                    : "video-page-buttons play disabled"
+                }
+                blurClassName={
+                  props.program.episodes.length !== 0
+                    ? "video-page-buttons play blur"
+                    : "video-page-buttons play disabled"
+                }
+                disabled={props.program.episodes.length !== 0 ? false : true}
+                onPress={onPress}
+                onFocus={onFocus}
+              />
               <VideoMoreInformationsButton
                 text="Plus d'informations"
                 focusClassName={"video-page-buttons more-informations focus"}
