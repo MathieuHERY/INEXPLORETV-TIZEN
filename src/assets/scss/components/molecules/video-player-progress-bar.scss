@@ -1,0 +1,28 @@
+.progress-wrapper {
+  width: 100%;
+  position: relative;
+  .slider {
+    margin: auto;
+  }
+  .slider-track {
+    top: 15px;
+    height: 8px;
+    background: $slider-track-empty;
+  }
+  .slider-track.slider-track-0 {
+    background: $light-blue;
+  }
+  .time-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+    span {
+      font-size: 1.25vw;
+      line-height: 1.5vw;
+      font-family: semi-bold;
+      color: $white;
+    }
+  }
+}

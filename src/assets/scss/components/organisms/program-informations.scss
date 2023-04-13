@@ -59,6 +59,7 @@
       }
       h1 {
         font-size: 3vw;
+        line-height: 3.5vw;
         color: $white;
         max-width: 100%;
         display: -webkit-box;
@@ -106,7 +107,6 @@
           }
         }
         .focus {
-          
           background-color: $white;
           height: 3.25vw;
           span {

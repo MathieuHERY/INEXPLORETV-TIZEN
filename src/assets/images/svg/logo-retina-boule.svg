@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="99px" height="99px" viewBox="0 0 99 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Inexplore TV</title>
+    <defs>
+        <linearGradient x1="14.3908561%" y1="89.2348392%" x2="69.5428029%" y2="28.4662868%" id="linearGradient-1">
+            <stop stop-color="#74C4EF" offset="0%"></stop>
+            <stop stop-color="#6FC2ED" offset="10%"></stop>
+            <stop stop-color="#61BCEA" offset="21%"></stop>
+            <stop stop-color="#4BB2E5" offset="32%"></stop>
+            <stop stop-color="#38AAE1" offset="40%"></stop>
+            <stop stop-color="#3195CD" offset="48%"></stop>
+            <stop stop-color="#20619C" offset="64%"></stop>
+            <stop stop-color="#20619C" offset="64%"></stop>
+            <stop stop-color="#454A96" offset="79%"></stop>
+            <stop stop-color="#613A91" offset="92%"></stop>
+            <stop stop-color="#6C3490" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="83.4524322%" y1="0.990099061%" x2="19.1777873%" y2="95.1657339%" id="linearGradient-2">
+            <stop stop-color="#74C4EF" offset="0%"></stop>
+            <stop stop-color="#6FC2ED" offset="10%"></stop>
+            <stop stop-color="#61BCEA" offset="21%"></stop>
+            <stop stop-color="#4BB2E5" offset="32%"></stop>
+            <stop stop-color="#38AAE1" offset="40%"></stop>
+            <stop stop-color="#3195CD" offset="48%"></stop>
+            <stop stop-color="#20619C" offset="64%"></stop>
+            <stop stop-color="#20619C" offset="64%"></stop>
+            <stop stop-color="#454A96" offset="79%"></stop>
+            <stop stop-color="#613A91" offset="92%"></stop>
+            <stop stop-color="#6C3490" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="18.8198419%" y1="11.9787408%" x2="87.3807577%" y2="95.5778141%" id="linearGradient-3">
+            <stop stop-color="#74C4EF" offset="0%"></stop>
+            <stop stop-color="#6FC2ED" offset="10%"></stop>
+            <stop stop-color="#61BCEA" offset="21%"></stop>
+            <stop stop-color="#4BB2E5" offset="32%"></stop>
+            <stop stop-color="#38AAE1" offset="40%"></stop>
+            <stop stop-color="#3195CD" offset="48%"></stop>
+            <stop stop-color="#20619C" offset="64%"></stop>
+            <stop stop-color="#20619C" offset="64%"></stop>
+            <stop stop-color="#454A96" offset="79%"></stop>
+            <stop stop-color="#613A91" offset="92%"></stop>
+            <stop stop-color="#6C3490" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" fill-rule="nonzero">
+            <circle id="Oval" fill="url(#linearGradient-1)" cx="49.2" cy="49.2" r="49.2"></circle>
+            <path d="M49.2,10.4360602 C27.8239316,10.4360602 10.4360602,27.8239316 10.4360602,49.2 C10.4360602,70.5760684 27.8239316,87.9639398 49.2,87.9639398 C70.5760684,87.9639398 87.9639398,70.5760684 87.9639398,49.2 C87.9639398,27.8239316 70.5760684,10.4360602 49.2,10.4360602 L49.2,10.4360602 Z M49.2,83.9190069 C30.0566545,83.9190069 14.480993,68.3433456 14.480993,49.2 C14.480993,30.0566544 30.0566545,14.4809931 49.2,14.4809931 C68.3433456,14.4809931 83.919007,30.0566544 83.919007,49.2 C83.919007,68.3433456 68.3433456,83.9190069 49.2,83.9190069 Z" id="Shape" fill="url(#linearGradient-2)"></path>
+            <path d="M49.2,24.7101343 C35.6968661,24.7101343 24.7101343,35.6968662 24.7101343,49.2 C24.7101343,62.7031338 35.6968661,73.6898657 49.2,73.6898657 C62.7031339,73.6898657 73.6898657,62.7031338 73.6898657,49.2 C73.6898657,35.6968662 62.7031339,24.7101343 49.2,24.7101343 L49.2,24.7101343 Z M49.2,69.6449328 C37.9262515,69.6449328 28.7550671,60.4737485 28.7550671,49.2 C28.7550671,37.9262515 37.9262515,28.7550672 49.2,28.7550672 C60.4737485,28.7550672 69.6449329,37.9262515 69.6449329,49.2 C69.6449329,60.4737485 60.4737485,69.6449328 49.2,69.6449328 Z" id="Shape" fill="url(#linearGradient-3)"></path>
+            <ellipse id="Oval" fill="#FFFFFF" cx="49.2" cy="49.2" rx="9.25461946" ry="9.25461946"></ellipse>
+        </g>
+    </g>
+</svg>
