@@ -12,7 +12,7 @@ import ProgramInformations from "../components/organisms/programInformations";
 import LoadPage from "./loadPage";
 import Overlay from "../components/organisms/overlay";
 import ContentRow from "../components/organisms/videosRow";
-import { BACK_KEY } from "../constants/keys";
+import { KEYS } from "../constants/keys";
 
 function VideoPageContent(props) {
   const { ref, focusKey, focusSelf } = useFocusable();
@@ -83,7 +83,7 @@ export default function VideoPage(props) {
 
   useEffect(() => {
     function goBack() {
-      BACK_KEY.map((key, i) => {
+      KEYS.back.map((key, i) => {
         if (keyHandler === key) {
           navigate("/home");
         }
