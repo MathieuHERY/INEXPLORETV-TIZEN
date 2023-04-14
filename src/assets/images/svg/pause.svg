@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="485px" height="485px" viewBox="0 0 485 485" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="47px" height="47px" viewBox="0 0 47 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>pause</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="pause" fill="currentColor" fill-rule="nonzero">
-            <path d="M413.974,71.026 C368.171,25.225 307.274,0 242.5,0 C177.726,0 116.829,25.225 71.026,71.026 C25.225,116.829 0,177.726 0,242.5 C0,307.274 25.225,368.171 71.026,413.974 C116.829,459.775 177.726,485 242.5,485 C307.274,485 368.171,459.775 413.974,413.974 C459.775,368.171 485,307.274 485,242.5 C485,177.726 459.775,116.829 413.974,71.026 Z M242.5,455 C125.327,455 30,359.673 30,242.5 C30,125.327 125.327,30 242.5,30 C359.673,30 455,125.327 455,242.5 C455,359.673 359.673,455 242.5,455 Z" id="Shape"></path>
-            <rect id="Rectangle" x="172.5" y="140" width="55" height="205"></rect>
-            <rect id="Rectangle" x="257.5" y="140" width="55" height="205"></rect>
+        <g id="pause" fill-rule="nonzero">
+            <circle id="Oval" fill="currentColor" cx="23.5" cy="23.5" r="23.5"></circle>
+            <rect id="Rectangle" fill="#FFFFFF" transform="translate(19.817073, 24.000000) scale(-1, 1) translate(-19.817073, -24.000000) " x="17.8170732" y="16" width="4" height="16"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" transform="translate(26.817073, 24.000000) scale(-1, 1) translate(-26.817073, -24.000000) " x="24.8170732" y="16" width="4" height="16"></rect>
         </g>
     </g>
 </svg>

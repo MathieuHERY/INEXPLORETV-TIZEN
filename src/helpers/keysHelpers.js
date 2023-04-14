@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function UseBack() {
+export default function UseKeys() {
   const [keyPressed, setKeyPressed] = useState(null);
 
   useEffect(() => {

@@ -6,7 +6,7 @@ import {
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
 import * as videoActions from "../store/actions/videoActions";
-import UseBack from "../helpers/backHandler";
+import UseKeys from "../helpers/keysHelpers";
 import Menu from "../components/organisms/menu";
 import ProgramInformations from "../components/organisms/programInformations";
 import LoadPage from "./loadPage";
@@ -64,7 +64,7 @@ export default function VideoPage(props) {
   const videoPlayer = useSelector((state) => state.videoPlayerReducer);
   const params = useParams();
   const dispatch = useDispatch();
-  const backHandler = UseBack();
+  const keyHandler = UseKeys();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -84,13 +84,13 @@ export default function VideoPage(props) {
   useEffect(() => {
     function goBack() {
       BACK_KEY.map((key, i) => {
-        if (backHandler === key) {
+        if (keyHandler === key) {
           navigate("/home");
         }
       });
     }
     goBack();
-  }, [backHandler]);
+  }, [keyHandler]);
 
   if (program.content.length === 0) {
     return <LoadPage />;

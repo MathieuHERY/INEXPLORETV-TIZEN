@@ -13,7 +13,7 @@ import SearchPage from "../pages/searchPage";
 
 export default function Navigation(props) {
   /* init spatial navigation */
-  init();
+  init({ throttle: 1, throttleKeypresses: true });
 
   return (
     <Routes>
