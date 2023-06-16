@@ -3,6 +3,7 @@ import {
   useFocusable,
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as focusActions from "../../store/actions/focusActions";
 import * as menuActions from "../../store/actions/menuActions";
@@ -15,6 +16,7 @@ export default function MenuItem(props) {
   );
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { ref, focused } = useFocusable({
     onFocus: () => {
@@ -25,8 +27,20 @@ export default function MenuItem(props) {
     },
     onEnterPress: () => {
       dispatch(menuActions.setMenuIndexSelected(props.index));
+      console.log(props.item.idcat);
+      menuRouter(props.item.idcat);
     },
   });
+
+  const menuRouter = (param) => {
+    if (param) {
+      if (param > 0) {
+        return navigate(`/category/${param}`);
+      }
+    } else {
+      return navigate("/home");
+    }
+  };
 
   if (props.item.titre === "Rechercher") {
     return (

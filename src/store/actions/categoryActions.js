@@ -18,3 +18,23 @@ export const getHomeContent = () => {
     }
   };
 };
+
+export const getCategoryVideo = (id) => {
+  console.log(id);
+  return async (dispatch) => {
+    try {
+      const formData = dataFormat();
+      formData.append("idcat", id);
+      const response = await postData("categorie.inrees", formData);
+      console.log(response)
+      dispatch({
+        type: SET_VIDEOS_LIST,
+        payload: {
+          data: response.data,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

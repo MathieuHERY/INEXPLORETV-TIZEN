@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React from "react";
 
 import PlayerProgressBar from "../molecules/playerProgressBar";
 import { decodeHtmlWithoutDOM } from "../../helpers/decodeHtml";
@@ -39,6 +39,15 @@ export default function PlayerControls(props) {
           />
         );
       case "pause":
+        return (
+          <PlayIcon
+            className="icon"
+            style={{
+              color: "#38a9e1",
+            }}
+          />
+        );
+      default:
         return (
           <PlayIcon
             className="icon"

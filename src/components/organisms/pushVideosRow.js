@@ -1,13 +1,16 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useCallback } from "react";
 import {
   useFocusable,
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
+import { useDispatch } from "react-redux";
+import * as focusActions from "../../store/actions/focusActions";
 import PushVideoItem from "../molecules/pushVideoItem";
 
 export default function PushVideosRow(props) {
   const { ref, focusKey } = useFocusable({});
   const pushVideoRef = useRef(null);
+  const dispatch = useDispatch();
 
   const onFocus = useCallback(
     (FocusableComponentLayout, index) => {
@@ -16,12 +19,13 @@ export default function PushVideosRow(props) {
         left: index === 0 ? 0 : FocusableComponentLayout.left,
         behaviour: "smooth",
       });
+      dispatch(focusActions.onFocusMenu(false));
     },
     [pushVideoRef]
   );
 
   const onPress = (slug) => {
-    props.onPress(slug)
+    props.onPress(slug);
   };
 
   return (

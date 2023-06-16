@@ -62,6 +62,7 @@ function VideoPageContent(props) {
 export default function VideoPage(props) {
   const program = useSelector((state) => state.videoReducer);
   const videoPlayer = useSelector((state) => state.videoPlayerReducer);
+
   const params = useParams();
   const dispatch = useDispatch();
   const keyHandler = UseKeys();
@@ -70,10 +71,14 @@ export default function VideoPage(props) {
   useEffect(() => {
     async function getVideoContent() {
       try {
-        await dispatch(videoActions.resetVideoContent());
-        const response = await dispatch(
-          videoActions.getVideoContent(params.slug)
-        );
+        if (program.content.length !== 0) {
+          if (program.content.video.slug !== params.slug) {
+            await dispatch(videoActions.resetVideoContent());
+            await dispatch(videoActions.getVideoContent(params.slug));
+          }
+        } else {
+          await dispatch(videoActions.getVideoContent(params.slug));
+        }
       } catch (error) {
         console.log(error);
       }
@@ -85,7 +90,8 @@ export default function VideoPage(props) {
     function goBack() {
       KEYS.back.map((key, i) => {
         if (keyHandler === key) {
-          navigate("/home");
+          dispatch(videoActions.resetVideoContent());
+          navigate(-1);
         }
       });
     }

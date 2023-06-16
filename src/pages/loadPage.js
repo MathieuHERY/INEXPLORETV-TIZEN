@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Loader from "../components/atoms/loader";
+
+
 
 export default function LoadPage(props) {
   return (

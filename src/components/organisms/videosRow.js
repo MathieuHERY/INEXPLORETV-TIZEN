@@ -3,6 +3,8 @@ import {
   useFocusable,
   FocusContext,
 } from "@noriginmedia/norigin-spatial-navigation";
+import { useDispatch } from "react-redux";
+import * as focusActions from "../../store/actions/focusActions";
 import VideoItem from "../molecules/videoItem";
 
 function VideosRow(props) {
@@ -12,13 +14,15 @@ function VideosRow(props) {
     },
   });
   const videoRowRef = useRef(null);
+  const dispatch = useDispatch();
 
   const onFocus = useCallback(
     (FocusableComponentLayout, index) => {
       videoRowRef.current.scrollTo({
-        left: index === 0 ? 0 : FocusableComponentLayout.left - 100,
+        left: index === 0 ? 0 : FocusableComponentLayout.left - 150,
         behaviour: "smooth",
       });
+      dispatch(focusActions.onFocusMenu(false));
     },
     [videoRowRef]
   );
@@ -64,11 +68,11 @@ export default function ContentRow(props) {
   return (
     <FocusContext.Provider value={focusKey}>
       <div className="row-scrolling-wrapper" ref={ref}>
-        <div>
+        <>
           {props.videosList.map((list, i) => (
             <VideosRow list={list} onRowFocus={onRowFocus} onPress={onPress} />
           ))}
-        </div>
+        </>
       </div>
     </FocusContext.Provider>
   );

@@ -33,12 +33,10 @@ export default function VideoPlayer(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
-
   useEffect(() => {
     function init() {
       focusSelf();
- 
+
       KEYS.back.map((key, i) => {
         if (keyHandler === key) {
           navigate(-1);
@@ -68,6 +66,8 @@ export default function VideoPlayer(props) {
       case "left":
         return skipBackward();
       case "right":
+        return skipForward();
+      default:
         return skipForward();
     }
   };
